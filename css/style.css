@@ -63,6 +63,7 @@ span{
 	font-weight: 500;
 	margin: 0 25px;
 	transition: all .45s ease;
+	
 }
 .navlist a:hover{
 	color: var(--main-color);
@@ -86,13 +87,15 @@ section{
 	position: relative;
 	height: 100vh;
 	width: 100%;
-	/* background-image: url(../img/background.jpg); */
+	background-image: url(../img/background.png);
 	background-size: cover;
 	background-position: center;
 	display: flex; 
 	 align-items: center; 
 	justify-content: flex-start;
 }
+
+ 
 .slide{
 	margin-bottom: 20px;
 }
@@ -107,12 +110,14 @@ section{
 	border-radius: 5px;
 	background: var(--main-color);
 	color: var(--text-color);
+	
 }
 .two{
 	display: inline-block;
 	color: var(--second-color);
 	font-size: 20px;
 	font-weight: 500;
+
 }
 .home-text h1{
 	/* font-size: var(--big-font); */
@@ -121,11 +126,12 @@ section{
 	color: var(--text-color);
 	line-height: 1.1;
 	margin: 0 0 8px;
+
 }
 .home-text h3{
 	color: var(--text-color);
 	margin: 0 0 35px;
-	/* font-size: 3rem; */
+	font-size: 3rem;
 	font-size: 1rem;
 	font-weight: 700;
 	line-height: 1.1;
@@ -135,6 +141,7 @@ section{
 	font-size: var(--p-font);
 	line-height: 1.8;
 	margin-bottom: 40px;
+
 }
 .button{
 	display: inline-flex;
