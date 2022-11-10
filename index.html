@@ -13,7 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link rel="icon" 
+     type="image/png" 
+     href="./img/ks23.code-logo.png">
 </head>
 <body>
 
@@ -400,16 +402,16 @@
 				<br>
 				<br>
 				<br>
-				<p>Below Contact form comming soon...</p>
 			</div>
 		</div>
  
 		<div class="contact-form">
 			<form action="">
-				<input type="name" placeholder="Your Name" required>
-				<input type="email" placeholder="Your Email Address" required>
-				<input type="" placeholder="Your Mobile Number" required>
-				<textarea name="" id="" cols="35" rows="10" placeholder="How Can I Help You" required></textarea>
+				<span class="message"></span>
+				<input type="text" name="name" placeholder="Your Name" required>
+				<input type="email" name="email"  placeholder="Your Email Address" required>
+				<input type="tel" name='message' placeholder="Your Mobile Number" required>
+				<textarea name="message" id="" cols="35" rows="10" placeholder="How Can I Help You" required></textarea>
 				<input type="submit" value="Send Message" class="submit" required>
 			</form>
 		</div>
@@ -428,6 +430,33 @@
 
 	<!---custom js link--->
 	<script type="text/javascript" src="js/script.js"></script>
+
+	<!-- contact form JAVASCRIPT BEGIN -->
+	<script>
+        let url = "https://script.google.com/macros/s/AKfycbzbJG4ztneRnWr8GMi0XWETVXziAhX-ajlPskRSCNQAM9vX9FommCDxVrcWkae0yx7GHw/exec";
+        let form = document.querySelector("form");
+        let submit = document.querySelector(".submit");
+        let message = document.querySelector(".message");
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submit.value = "submitting.."
+            fetch(url, {
+                    method: "POST",
+                    body: new FormData(form)
+                })
+                .then(res => res.text())
+                .then(data => {
+                    message.innerHTML = data;
+                    submit.value = "submit"
+ 
+                })
+                .catch(err => {
+                    message.innerHTML = err;
+                    submit.value = "submit"
+                })
+        })
+    </script>
+	<!-- contact form JAVASCRIPT END-->
 
 </body>
 </html>
